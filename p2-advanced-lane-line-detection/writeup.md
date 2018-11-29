@@ -55,7 +55,7 @@ I used a combination of color and gradient thresholds to generate a binary image
 
 **HLS channels:**  
 ![hls_hue_channel](https://user-images.githubusercontent.com/11286381/49201356-7249a980-f355-11e8-8de3-ac7d7235dcde.png)
-![hls_light_channel](https://user-images.githubusercontent.com/11286381/49201357-72e24000-f355-11e8-8295-b8ae53b19b05.png
+![hls_light_channel](https://user-images.githubusercontent.com/11286381/49201357-72e24000-f355-11e8-8295-b8ae53b19b05.png)
 ![hls_saturation_channel](https://user-images.githubusercontent.com/11286381/49201359-72e24000-f355-11e8-9969-43d26f79d919.png)
 
 **Final combined image:**  
