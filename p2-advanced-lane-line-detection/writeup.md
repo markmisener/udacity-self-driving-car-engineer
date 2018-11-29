@@ -89,7 +89,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
-![alt text][image5]
+![pipeline_polyfit](https://user-images.githubusercontent.com/11286381/49204382-9494f480-f360-11e8-8ed0-a8ea26e796c2.png)
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -99,7 +99,20 @@ I did this in lines # through # in my code in `my_other_file.py`
 
 I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
 
-![alt text][image6]
+![pipeline_lane_detection](https://user-images.githubusercontent.com/11286381/49204381-9494f480-f360-11e8-8df8-ccc6f4807912.png)
+
+---
+
+### End to end:
+![pipeline_corrected](https://user-images.githubusercontent.com/11286381/49204380-9494f480-f360-11e8-9e69-6b24b1e22b92.png)
+![pipeline_binary](https://user-images.githubusercontent.com/11286381/49204379-9494f480-f360-11e8-8c9c-0aae7e71142d.png)
+![pipeline_binary_warped](https://user-images.githubusercontent.com/11286381/49204378-93fc5e00-f360-11e8-8007-591361c08211.png)
+![pipeline_roi](https://user-images.githubusercontent.com/11286381/49204383-9494f480-f360-11e8-99a5-35483b21ee50.png)
+![pipeline_polyfit](https://user-images.githubusercontent.com/11286381/49204382-9494f480-f360-11e8-8ed0-a8ea26e796c2.png)
+![pipeline_lane_detection](https://user-images.githubusercontent.com/11286381/49204381-9494f480-f360-11e8-8df8-ccc6f4807912.png)
+
+
+
 
 ---
 
