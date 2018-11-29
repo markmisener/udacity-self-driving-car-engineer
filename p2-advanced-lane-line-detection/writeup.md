@@ -35,13 +35,31 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![alt text]['./output_images/undistorted.png']
+![undistorted](https://user-images.githubusercontent.com/11286381/49201283-2c8ce100-f355-11e8-8eae-62797eed24ca.png)
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
-![alt text][image3]
+![blue_channel](https://user-images.githubusercontent.com/11286381/49201351-7249a980-f355-11e8-8458-c9e37335bfe9.png)
+![combined_binary](https://user-images.githubusercontent.com/11286381/49201352-7249a980-f355-11e8-8f91-b50f20af4656.png)
+![green_channel](https://user-images.githubusercontent.com/11286381/49201353-7249a980-f355-11e8-970a-66cc17d7299a.png)
+![hls_blue_channel](https://user-images.githubusercontent.com/11286381/49201354-7249a980-f355-11e8-87ca-ff134f20a059.png)
+![hls_green_channel](https://user-images.githubusercontent.com/11286381/49201355-7249a980-f355-11e8-9094-77dc381e39c0.png)
+![hls_hue_channel](https://user-images.githubusercontent.com/11286381/49201356-7249a980-f355-11e8-8de3-ac7d7235dcde.png)
+![hls_light_channel](https://user-images.githubusercontent.com/11286381/49201357-72e24000-f355-11e8-8295-b8ae53b19b05.png)
+![hls_red_channel](https://user-images.githubusercontent.com/11286381/49201358-72e24000-f355-11e8-8edd-81775a4a9b0b.png)
+![hls_saturation_channel](https://user-images.githubusercontent.com/11286381/49201359-72e24000-f355-11e8-9969-43d26f79d919.png)
+![hsv_blue_channel](https://user-images.githubusercontent.com/11286381/49201360-72e24000-f355-11e8-9630-f6d013beec1d.png)
+![hsv_green_channel](https://user-images.githubusercontent.com/11286381/49201361-72e24000-f355-11e8-8ff0-da737fc038a9.png)
+![hsv_hue_channel](https://user-images.githubusercontent.com/11286381/49201362-72e24000-f355-11e8-953c-be2592367d6b.png)
+![hsv_red_channel](https://user-images.githubusercontent.com/11286381/49201363-737ad680-f355-11e8-8545-fcdc6ca85c23.png)
+![hsv_saturation_channel](https://user-images.githubusercontent.com/11286381/49201364-737ad680-f355-11e8-814c-b8a925835ba7.png)
+![hsv_value_channel](https://user-images.githubusercontent.com/11286381/49201365-737ad680-f355-11e8-9021-d95543ae7b16.png)
+![red_channel](https://user-images.githubusercontent.com/11286381/49201366-737ad680-f355-11e8-8c90-6df8bc31e3b4.png)
+![white_channel](https://user-images.githubusercontent.com/11286381/49201367-737ad680-f355-11e8-9613-b7fe40cd5595.png)
+![yellow_channel](https://user-images.githubusercontent.com/11286381/49201368-737ad680-f355-11e8-9e2f-6eddbb35a4c5.png)
+
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -95,7 +113,11 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+[![screencap](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+
+Here's a [link to my download my video result](https://github.com/markmisener/udacity-self-driving-car-engineer/blob/master/p2-advanced-lane-line-detection/output_video/lane_tracking.mp4)
+
+
 
 ---
 
