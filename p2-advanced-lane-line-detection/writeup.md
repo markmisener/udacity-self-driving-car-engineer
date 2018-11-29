@@ -28,7 +28,7 @@ I start by preparing the "object points", which correspond to the (x, y, z) coor
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result:
 
-![alt text][https://github.com/markmisener/udacity-self-driving-car-engineer/blob/master/p2-advanced-lane-line-detection/output_images/undistorted.png]
+![undistorted](https://user-images.githubusercontent.com/11286381/49201283-2c8ce100-f355-11e8-8eae-62797eed24ca.png)
 
 ### Pipeline (single images)
 
