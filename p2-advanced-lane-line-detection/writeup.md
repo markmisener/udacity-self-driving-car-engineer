@@ -41,27 +41,24 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
-**Color channels:**
-Blue:
+**Color channels:**  
 ![blue_channel](https://user-images.githubusercontent.com/11286381/49201351-7249a980-f355-11e8-8458-c9e37335bfe9.png)
-Green:
 ![green_channel](https://user-images.githubusercontent.com/11286381/49201353-7249a980-f355-11e8-970a-66cc17d7299a.png)
-Red:
 ![red_channel](https://user-images.githubusercontent.com/11286381/49201366-737ad680-f355-11e8-8c90-6df8bc31e3b4.png)
 ![white_channel](https://user-images.githubusercontent.com/11286381/49201367-737ad680-f355-11e8-9613-b7fe40cd5595.png)
 ![yellow_channel](https://user-images.githubusercontent.com/11286381/49201368-737ad680-f355-11e8-9e2f-6eddbb35a4c5.png)
 
-**HSV channels:**
+**HSV channels:**  
 ![hsv_hue_channel](https://user-images.githubusercontent.com/11286381/49201362-72e24000-f355-11e8-953c-be2592367d6b.png)
 ![hsv_saturation_channel](https://user-images.githubusercontent.com/11286381/49201364-737ad680-f355-11e8-814c-b8a925835ba7.png)
 ![hsv_value_channel](https://user-images.githubusercontent.com/11286381/49201365-737ad680-f355-11e8-9021-d95543ae7b16.png)
 
-**HLS channels:**
+**HLS channels:**  
 ![hls_hue_channel](https://user-images.githubusercontent.com/11286381/49201356-7249a980-f355-11e8-8de3-ac7d7235dcde.png)
 ![hls_light_channel](https://user-images.githubusercontent.com/11286381/49201357-72e24000-f355-11e8-8295-b8ae53b19b05.png
 ![hls_saturation_channel](https://user-images.githubusercontent.com/11286381/49201359-72e24000-f355-11e8-9969-43d26f79d919.png)
 
-**Final combined image:**
+**Final combined image:**  
 ![combined_binary](https://user-images.githubusercontent.com/11286381/49201352-7249a980-f355-11e8-8f91-b50f20af4656.png)
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
