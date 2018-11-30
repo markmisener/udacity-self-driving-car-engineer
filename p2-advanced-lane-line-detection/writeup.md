@@ -105,7 +105,7 @@ that position, which helps give us a jump-start on the next loop.
 
 At this point, we are able to plot the polynomial and windows like so:
 
-![pipeline_polyfit](https://user-images.githubusercontent.com/11286381/49204382-9494f480-f360-11e8-8ed0-a8ea26e796c2.png)
+![polyfit_img](https://user-images.githubusercontent.com/11286381/49269057-cddc6b80-f417-11e8-8a61-6a21b4812053.png)
 
 The final code used in the image and video pipelines can be seen in the `find_lane_pixels()` and `fit_polynomial()` functions in the `Detect lanes in single images¶` section of the notebook.
 
@@ -115,7 +115,8 @@ The `get_radius_and_offset()` function handles calculating the radius and offset
 
 To calculate the radius, we first fine the curvature of each line individually.
 
-![radius formula]()
+<img width="366" alt="radius_formula" src="https://user-images.githubusercontent.com/11286381/49269107-1ac04200-f418-11e8-8c77-c12cd409772a.png">
+
 
 After finding the curvature of each line, we simply get the average of the two.
 ```python
@@ -141,7 +142,7 @@ The final code used in the image and video pipelines can be seen in the `get_rad
 
 Here is an image of the projected lane detection:
 
-![pipeline_lane_detection](https://user-images.githubusercontent.com/11286381/49204381-9494f480-f360-11e8-8df8-ccc6f4807912.png)
+![lane_detected_img](https://user-images.githubusercontent.com/11286381/49269056-cddc6b80-f417-11e8-84f5-f47e5a43004d.png)
 
 The final code used in the image and video pipelines can be seen in the `draw()` function in the `Detect lanes in single images` section of the notebook.
 
@@ -153,7 +154,7 @@ The final code used in the image and video pipelines can be seen in the `draw()`
 ![pipeline_binary](https://user-images.githubusercontent.com/11286381/49204379-9494f480-f360-11e8-8c9c-0aae7e71142d.png)
 ![pipeline_roi](https://user-images.githubusercontent.com/11286381/49204383-9494f480-f360-11e8-99a5-35483b21ee50.png)
 ![pipeline_binary_warped](https://user-images.githubusercontent.com/11286381/49204378-93fc5e00-f360-11e8-8007-591361c08211.png)
-![pipeline_polyfit](https://user-images.githubusercontent.com/11286381/49204382-9494f480-f360-11e8-8ed0-a8ea26e796c2.png)
+![polyfit_img](https://user-images.githubusercontent.com/11286381/49269057-cddc6b80-f417-11e8-8a61-6a21b4812053.png)
 ![pipeline_lane_detection](https://user-images.githubusercontent.com/11286381/49204381-9494f480-f360-11e8-8df8-ccc6f4807912.png)
 
 
