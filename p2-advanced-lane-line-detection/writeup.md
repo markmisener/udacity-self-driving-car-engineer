@@ -105,7 +105,7 @@ that position, which helps give us a jump-start on the next loop.
 
 At this point, we are able to plot the polynomial and windows like so:
 
-![polyfit_img](https://user-images.githubusercontent.com/11286381/49269057-cddc6b80-f417-11e8-8a61-6a21b4812053.png)
+![polyfit_img](https://user-images.githubusercontent.com/11286381/49269202-9ae6a780-f418-11e8-9f33-3471ad651ff9.png)
 
 The final code used in the image and video pipelines can be seen in the `find_lane_pixels()` and `fit_polynomial()` functions in the `Detect lanes in single images¶` section of the notebook.
 
@@ -154,7 +154,7 @@ The final code used in the image and video pipelines can be seen in the `draw()`
 ![pipeline_binary](https://user-images.githubusercontent.com/11286381/49204379-9494f480-f360-11e8-8c9c-0aae7e71142d.png)
 ![pipeline_roi](https://user-images.githubusercontent.com/11286381/49204383-9494f480-f360-11e8-99a5-35483b21ee50.png)
 ![pipeline_binary_warped](https://user-images.githubusercontent.com/11286381/49204378-93fc5e00-f360-11e8-8007-591361c08211.png)
-![polyfit_img](https://user-images.githubusercontent.com/11286381/49269057-cddc6b80-f417-11e8-8a61-6a21b4812053.png)
+![polyfit_img](https://user-images.githubusercontent.com/11286381/49269202-9ae6a780-f418-11e8-9f33-3471ad651ff9.png)
 ![pipeline_lane_detection](https://user-images.githubusercontent.com/11286381/49204381-9494f480-f360-11e8-8df8-ccc6f4807912.png)
 
 
@@ -166,7 +166,7 @@ The final code used in the image and video pipelines can be seen in the `draw()`
 
 [![screencap](https://img.youtube.com/vi/-ew4mhf7ZQI/0.jpg)](https://www.youtube.com/watch?v=-ew4mhf7ZQI)
 
-Here's a [link to my download my video result](https://github.com/markmisener/udacity-self-driving-car-engineer/blob/master/p2-advanced-lane-line-detection/output_video/lane_tracking.mp4)
+Here's a [link to my download my video result](https://github.com/markmisener/udacity-self-driving-car-engineer/blob/master/p2-advanced-lane-line-detection/output_video/lane_detection_video.mp4)
 
 The final code used in the image and video pipelines can be seen in the `image_pipeline()` function in the `Detecting lanes in video` section of the notebook.
 
