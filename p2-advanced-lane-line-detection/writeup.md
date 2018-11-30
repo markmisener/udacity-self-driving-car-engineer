@@ -94,7 +94,16 @@ The final code used in the image and video pipelines can be seen in the `apply_p
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+After warping the combined binary image, I used the `fit_polynomial()` function, which fits the lane lines with a
+2nd order polynomial, and calls the `find_lane_pixels()` function. The `find_lane_pixels()` function first takes
+the bottom half of the image and creates a histogram of the pixels, effectively identifying where the lane lines
+start (at the minimum y value).
+
+The function then loops through each "window" of the image, identifies the non-zero pixels, and appends the indices
+to a list. If the algorithm identifies non-zero pixels in that window, we set the center of the next window to
+that position, which helps give us a jump-start on the next loop.
+
+At this point, we are able to plot the polynomial and windows like so:
 
 ![pipeline_polyfit](https://user-images.githubusercontent.com/11286381/49204382-9494f480-f360-11e8-8ed0-a8ea26e796c2.png)
 
@@ -102,23 +111,43 @@ The final code used in the image and video pipelines can be seen in the `find_la
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+The `get_radius_and_offset()` function handles calculating the radius and offset.
+
+To calculate the radius, we first fine the curvature of each line individually.
+
+![radius formula]()
+
+After finding the curvature of each line, we simply get the average of the two.
+```python
+left_curverad =  ((1 + (2*left_fit[0]*720*ym_per_pixel + left_fit[1])**2)**(3/2))/np.abs(2*left_fit[0])
+right_curverad =  ((1 + (2*right_fit[0]*720*ym_per_pixel + right_fit[1])**2)**(3/2))/np.abs(2*right_fit[0])
+radius = np.mean([left_curverad, right_curverad])
+```
+
+To calculate the offset, we calculate the x position of each lane line within the image and subtract
+the the center of the lane (which we assume is the location of the camera), after converting pixels to
+meters.
+
+```python
+left_lane = left_fit[0]*(720*ym_per_pixel)**2 + left_fit[1]*720*ym_per_pixel + left_fit[2]
+right_lane = right_fit[0]*(720*ym_per_pixel)**2 + right_fit[1]*720*ym_per_pixel + right_fit[2]
+offset = [640*xm_per_pixel - np.mean([left_lane, right_lane]), right_lane-left_lane]
+```
+
 
 The final code used in the image and video pipelines can be seen in the `get_radius_and_offset()` function in the `Detect lanes in single images¶` section of the notebook.
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+Here is an image of the projected lane detection:
 
 ![pipeline_lane_detection](https://user-images.githubusercontent.com/11286381/49204381-9494f480-f360-11e8-8df8-ccc6f4807912.png)
 
-The final code used in the image and video pipelines can be seen in the `draw()` function in the `Detect lanes in single images¶` section of the notebook.
+The final code used in the image and video pipelines can be seen in the `draw()` function in the `Detect lanes in single images` section of the notebook.
 
 ---
 
 ### End to end:
-
-The final code used in the image and video pipelines can be seen in the `` function in the `` section of the notebook.
 
 ![pipeline_corrected](https://user-images.githubusercontent.com/11286381/49204380-9494f480-f360-11e8-9e69-6b24b1e22b92.png)
 ![pipeline_binary](https://user-images.githubusercontent.com/11286381/49204379-9494f480-f360-11e8-8c9c-0aae7e71142d.png)
@@ -138,7 +167,7 @@ The final code used in the image and video pipelines can be seen in the `` funct
 
 Here's a [link to my download my video result](https://github.com/markmisener/udacity-self-driving-car-engineer/blob/master/p2-advanced-lane-line-detection/output_video/lane_tracking.mp4)
 
-The final code used in the image and video pipelines can be seen in the `` function in the `` section of the notebook.
+The final code used in the image and video pipelines can be seen in the `image_pipeline()` function in the `Detecting lanes in video` section of the notebook.
 
 ---
 
@@ -146,4 +175,4 @@ The final code used in the image and video pipelines can be seen in the `` funct
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Because I used smoothing to determine if the image (in the video) should be updated or if we should just use the lane detected in the previous frame, the pipeline will likely fail in conditions where there are more abrupt changes such as sharper turns, vehicle moving between lanes, other obstacles entering the field of view. At this point in my understanding of these types of detections, I am not sure of how to make this more robust.
