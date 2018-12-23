@@ -1,11 +1,5 @@
 # **Traffic Sign Recognition**
 
-## Writeup
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
@@ -16,16 +10,6 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
@@ -34,7 +18,7 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/markmisener/udacity-self-driving-car-engineer/blob/master/p3-traffic-sign-classifier/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
@@ -53,7 +37,7 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing the frequency of each traffic sign in the training data set.
 
-![alt text][image1]
+![image](https://user-images.githubusercontent.com/11286381/50388253-5a9be180-06c5-11e9-8d4d-9f7bc628cf37.png)
 
 ### Design and Test a Model Architecture
 
@@ -122,8 +106,7 @@ Because the training accuracy, validation accuracy, and test accuracy are all hi
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6]
-![alt text][image7] ![alt text][image8]
+![image](https://user-images.githubusercontent.com/11286381/50388257-6c7d8480-06c5-11e9-86f5-d84a66f2951e.png)
 
 Each of these images might be difficult for the model to classify due to:
 - These new images don't have a background, as the images in the training set do.
