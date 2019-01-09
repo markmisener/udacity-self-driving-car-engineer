@@ -111,7 +111,7 @@ I then recorded the vehicle recovering from the left side and right sides of the
 ![recovery_l](https://user-images.githubusercontent.com/11286381/50926333-9e9f1e00-1409-11e9-85fb-dccb8602d22e.jpg)
 ![recovery_r](https://user-images.githubusercontent.com/11286381/50926334-9e9f1e00-1409-11e9-9d3e-f7e6a764e1cb.jpg)
 
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+To augment the data sat, I also flipped images and angles thinking that this would help the model generalize better. For example, here is an image that has then been flipped:
 
 ![recovery](https://user-images.githubusercontent.com/11286381/50926336-9e9f1e00-1409-11e9-91a2-f8996e35ccdd.jpg)
 ![recovery_flip](https://user-images.githubusercontent.com/11286381/50926332-9e9f1e00-1409-11e9-8252-40803d38b82c.jpg)
