@@ -104,14 +104,14 @@ The final model architecture (model.py lines 95-11) consisted of a convolution n
 
 To capture good driving behavior, I used the data provided by Udacity:
 
-![alt text][image2]
+![good_driving_c](https://user-images.githubusercontent.com/11286381/50926331-9e068780-1409-11e9-8cbb-61b83dd3c493.jpg)
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to correct toward the center of the lane. These images show what a recovery looks:
 
-![alt text][image3]
-![alt text][image4]
+![recovery_l](https://user-images.githubusercontent.com/11286381/50926333-9e9f1e00-1409-11e9-85fb-dccb8602d22e.jpg)
+![recovery_r](https://user-images.githubusercontent.com/11286381/50926334-9e9f1e00-1409-11e9-9d3e-f7e6a764e1cb.jpg)
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
-![alt text][image6]
-![alt text][image7]
+![recovery](https://user-images.githubusercontent.com/11286381/50926336-9e9f1e00-1409-11e9-91a2-f8996e35ccdd.jpg)
+![recovery_flip](https://user-images.githubusercontent.com/11286381/50926332-9e9f1e00-1409-11e9-8252-40803d38b82c.jpg)
