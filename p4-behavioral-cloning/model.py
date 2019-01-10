@@ -9,6 +9,7 @@ from keras.models import Sequential
 from keras.layers import Conv2D, Cropping2D, Dense, Dropout, Flatten, Lambda
 from sklearn.model_selection import train_test_split
 import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
 
 IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS = 160, 320, 3
 
@@ -96,15 +97,13 @@ def build_model():
     model.add(Cropping2D(cropping=((65,20), (0,0)), input_shape=(IMG_HEIGHT,IMG_WIDTH,IMG_CHANNELS)))
     model.add(Lambda(lambda x: (x / 255.0) - 0.5))
     model.add(Conv2D(24, (5, 5), strides=(2, 2), activation='relu'))
-    model.add(Dropout(0.5))
     model.add(Conv2D(36, (5, 5), strides=(2, 2), activation='relu'))
     model.add(Conv2D(48, (5, 5), strides=(2, 2), activation='relu'))
-    model.add(Dropout(0.5))
     model.add(Conv2D(64, (3, 3), activation='relu'))
     model.add(Conv2D(64, (3, 3), activation='relu'))
-    model.add(Dropout(0.5))
     model.add(Flatten())
     model.add(Dense(100))
+    model.add(Dropout(0.5))
     model.add(Dense(50))
     model.add(Dropout(0.5))
     model.add(Dense(10))
@@ -182,6 +181,17 @@ def main():
     model.save('model.h5')
 
     print('Model saved, training complete!')
+
+    # summarize history for loss
+    plt.subplot(111)
+    plt.plot(history_object.history['loss'])
+    plt.plot(history_object.history['val_loss'])
+    plt.title('model loss')
+    plt.ylabel('loss')
+    plt.xlabel('epoch')
+    plt.legend(['train', 'test'], loc='upper left')
+
+    plt.savefig('history.png', bbox_inches='tight')
 
 if __name__ == '__main__':
     main()
