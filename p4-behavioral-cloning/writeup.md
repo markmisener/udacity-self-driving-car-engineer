@@ -1,11 +1,3 @@
-# **Behavioral Cloning**
-
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Behavioral Cloning Project**
 
 The goals / steps of this project are the following:
@@ -43,23 +35,23 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network modeled after NVIDIA's (End to End Learning for Self-Driving Cars)[https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf].
+My model consists of a convolution neural network modeled after NVIDIA's [End to End Learning for Self-Driving Cars](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf).
 
-The model includes RELU layers to introduce nonlinearity (first example: model.py line 98), and the data is normalized in the model using a Keras lambda layer (model.py line 97).
+The model includes RELU layers to introduce nonlinearity (first example: model.py line 99), and the data is normalized in the model using a Keras lambda layer (model.py line 98).
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains multiple dropout layers in order to reduce overfitting (first example: model.py lines 99).
+The model contains multiple dropout layers between the dense layers in order to reduce overfitting (first example: model.py lines 106). These layers reduce overfitting by randomly dropping outputs from a layer of neural network - resulting in more neurons being forced to learn the characteristics in the network. This helps the model to better generalize on unseen data.
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (model.py function load_data lines 55-82). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+In order to keep track of whether the model is over/under-fitting, the model was trained and validated on different datasets. This helps us to keep track of how well the model performs with previously unseen data (model.py function load_data lines 83).
 
 #### 3. Model parameter tuning
 
-The model used an Adam optimizer, so the learning rate was not tuned manually (model.py line 170).
+The model used an Adam optimizer, so the learning rate was not tuned manually, but was initialized on the default learning rate of 0.0001 (model.py line 169).
 
 #### 4. Appropriate training data
 
-I used the data provided by Udacity as a starting place for training my model. The model architecture and the given data led to the car drifting off the track at the first sharp turn by the lake. Because of this, I decided it was best to include some additionaly training data focused on recovering from drifting. I captured data of the car recovering from the left and right sides of the road in both the forward and reverse direction on the track.
+I used the data provided by Udacity as a starting place for training my model. The model architecture and the given data led to the car drifting off the track at the first sharp turn by the lake. Because of this, I decided it was best to include some additional training data focused on recovering from drifting. I captured data of the car recovering from the left and right sides of the road in both the forward and reverse direction on the track.
 
 ### Model Architecture and Training Strategy
 
@@ -67,11 +59,11 @@ I used the data provided by Udacity as a starting place for training my model. T
 
 The overall strategy for deriving a model architecture was to build off existing research completed by experts in the field and fine-tune the model to my data.
 
-My first step was to use a convolution neural network model similar to the NVIDIA End to End Learning for Self-Driving Cars. I thought this model might be appropriate because it is a similar use case and was suggested in the course notes.
+My first step was to use a convolution neural network model similar to the NVIDIA [End to End Learning for Self-Driving Cars](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf). I thought this model might be appropriate because it is a similar use case and was suggested in the course notes.
 
-In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting.
+In order to gauge how well the model was training, I split my image and steering angle data into a training and validation set. During training, I found that the model trained only on the supplied data had a low mean squared error (MSE) on the training set but a high MSE on the validation set. This implied the model might be overfitting.
 
-To combat the overfitting, I modified the model to include multiple Dropout layers with a keep_prob of 0.5.
+To combat the potential overfitting, I modified the model to include multiple dropout layers with a keep_prob of 0.5.
 
 Then I captured training data in which the car was driven the reserve direction around the course. Additionally, I included a random augmentation function which randomly selected images in the training set to be flipped horizontally or had the image's brightness adjusted randomly.
 
@@ -81,8 +73,9 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 95-11) consisted of a convolution neural network with the following layers and layer sizes:
+The final model architecture (model.py lines 96-111) consisted of a convolution neural network with the following layers and layer sizes:
 
+```
 - Cropping2D (removing unneeded top/bottom of the image)
 - Lambda (normalization of the image)
 - Conv2D(24, (5, 5), strides=(2, 2), activation='relu')
@@ -99,6 +92,7 @@ The final model architecture (model.py lines 95-11) consisted of a convolution n
 - Dropout(0.5)
 - Dense(10)
 - Dense(1)
+```
 
 #### 3. Creation of the Training Set & Training Process
 
@@ -115,3 +109,7 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 
 ![recovery](https://user-images.githubusercontent.com/11286381/50926336-9e9f1e00-1409-11e9-91a2-f8996e35ccdd.jpg)
 ![recovery_flip](https://user-images.githubusercontent.com/11286381/50926332-9e9f1e00-1409-11e9-8252-40803d38b82c.jpg)
+
+Here is a view of the loss history during training.
+
+![history](https://user-images.githubusercontent.com/11286381/50938054-5b55a700-142b-11e9-9aa8-6a233fb03df6.png)
