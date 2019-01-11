@@ -28,3 +28,8 @@ Train and validate a model to classify traffic sign images using the German Traf
 Use Udacity's driving simulator to create a dataset to clone driving behavior by training and validating a model using Keras. The model outputs a steering angle to an autonomous vehicle.
 
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p4-behavioral-cloning)
+
+### Extended Kalman Filter
+Utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements.
+
+[Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p5-extended-kalman-filters)
