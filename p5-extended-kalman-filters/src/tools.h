@@ -19,7 +19,7 @@ class Tools {
   /**
    * A helper method to calculate RMSE.
    */
-  Eigen::VectorXd CalculateRMSE(const std::vector<Eigen::VectorXd> &estimations, 
+  Eigen::VectorXd CalculateRMSE(const std::vector<Eigen::VectorXd> &estimations,
                                 const std::vector<Eigen::VectorXd> &ground_truth);
 
   /**
