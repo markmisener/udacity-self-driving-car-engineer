@@ -1,12 +1,12 @@
 # Udacity Self-Driving Car Engineer Nanodegree
 
-[Link to description](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)
+This repository houses my solutions for projects completed as part of Udacity's [Self-driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013).
 
 
 ## Projects
 
 ### Basic Lane Line Detection
-Find lane markings in images and video using region of interest selection, grayscaling, Gaussian smoothing, Canny Edge Detection and Hough Transform line detection.
+Employ region of interest selection, grayscaling, Gaussian smoothing, Canny Edge Detection and Hough Transform line detection to identify lane lines on the road in an image.
 
 ![example](https://user-images.githubusercontent.com/11286381/51013469-73a2f000-1517-11e9-922e-a612674272f1.gif)  
 _Simple linearly extrapolated lane detections_
@@ -29,7 +29,7 @@ _Lane detections with curvature and offset_
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/blob/master/p2-advanced-lane-line-detection/)
 
 ### Traffic sign classifier
-Train and validate a model to classify traffic sign images using the German Traffic Sign Dataset.
+Train and validate a deep learning model using TensorFlow to classify traffic sign images using the German Traffic Sign Dataset.
 
 [Rendered notebook](https://nbviewer.jupyter.org/github/markmisener/udacity-self-driving-car-engineer/blob/master/p3-traffic-sign-classifier/Traffic_Sign_Classifier.ipynb)  
 [Project writeup](https://github.com/markmisener/udacity-self-driving-car-engineer/blob/master/p3-traffic-sign-classifier/writeup.md)  
@@ -45,9 +45,10 @@ _Autonomus driving in the simulator_
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p4-behavioral-cloning)
 
 ### Extended Kalman Filter
-Utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements.
+Utilize a Kalman filter, and simulated lidar and radar measurements to track the a bicycle's position and velocity.
 
 <img width="794" alt="dataset_1" src="https://user-images.githubusercontent.com/11286381/51014070-b1554800-151a-11e9-8690-93b7226af20a.png">
+_Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles._
 
 
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p5-extended-kalman-filters)
