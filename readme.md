@@ -45,10 +45,11 @@ _Autonomus driving in the simulator_
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p4-behavioral-cloning)
 
 ### Extended Kalman Filter
-Utilize a Kalman filter, and simulated lidar and radar measurements to track the a bicycle's position and velocity.
+Utilize a Kalman filter, and simulated lidar and radar measurements to track the a bicycle's position and velocity.  
 
-<img width="794" alt="dataset_1" src="https://user-images.githubusercontent.com/11286381/51014070-b1554800-151a-11e9-8690-93b7226af20a.png">
-_Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles._
+Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles.
+
+<img width="794" alt="dataset_1" src="https://user-images.githubusercontent.com/11286381/51014070-b1554800-151a-11e9-8690-93b7226af20a.png">  
 
 
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p5-extended-kalman-filters)
