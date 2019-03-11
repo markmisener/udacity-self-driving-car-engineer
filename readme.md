@@ -58,4 +58,6 @@ Lidar measurements are red circles, radar measurements are blue circles with an 
 
 A 2 dimensional particle filter in C++. The particle filter is given a map and some initial localization information (analogous to what a GPS would provide). At each time step the filter is also given observation and control data.
 
+![particle_filter](https://user-images.githubusercontent.com/11286381/54099737-ff9a9200-4377-11e9-8027-31408ed82d46.gif)
+
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p6-sparse-particle-filters)
