@@ -53,3 +53,9 @@ Lidar measurements are red circles, radar measurements are blue circles with an 
 
 
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p5-extended-kalman-filters)
+
+### Localization: Particle Filter
+
+A 2 dimensional particle filter in C++. The particle filter is given a map and some initial localization information (analogous to what a GPS would provide). At each time step the filter is also given observation and control data.
+
+[Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p6-sparse-particle-filters)
