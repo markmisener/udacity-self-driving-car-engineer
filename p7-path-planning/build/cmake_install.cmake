@@ -1,4 +1,4 @@
-# Install script for directory: /Users/mmisener/git/udacity-self-driving-car/p7-path-planning
+# Install script for directory: /Users/markmisener/git/udacity-self-driving-car-engineer/p7-path-planning
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/mmisener/git/udacity-self-driving-car/p7-path-planning/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/markmisener/git/udacity-self-driving-car-engineer/p7-path-planning/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

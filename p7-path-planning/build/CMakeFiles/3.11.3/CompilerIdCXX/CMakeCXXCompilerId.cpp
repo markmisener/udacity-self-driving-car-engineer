@@ -561,9 +561,7 @@ char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";
 #endif
 
 const char* info_language_dialect_default = "INFO" ":" "dialect_default["
-#if CXX_STD > 201703L
-  "20"
-#elif CXX_STD >= 201703L
+#if CXX_STD > 201402L
   "17"
 #elif CXX_STD >= 201402L
   "14"
