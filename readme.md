@@ -61,3 +61,11 @@ A 2 dimensional particle filter in C++. The particle filter is given a map and s
 ![particle_filter](https://user-images.githubusercontent.com/11286381/54099737-ff9a9200-4377-11e9-8027-31408ed82d46.gif)
 
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p6-sparse-particle-filters)
+
+### Path Planning: Vehicle Trajectories
+
+Safely navigate a self-driving car around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
+
+![path_planning](https://user-images.githubusercontent.com/11286381/56447254-0e9c2a80-62bc-11e9-8175-d109df365521.gif)
+
+[Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p7-path-planning)
