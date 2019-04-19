@@ -2,7 +2,40 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ### Model Documentation
-TODO
+For this project, we were provided with nearly all the necessary components to simulate a self-driving car making it's way around a
+highway with other cars. The only missing piece was the path planner. This section details the path planning model.
+
+#### Overview
+
+The output of the path planning model is a series of (x, y) points along a map. The duration between points in 0.2 seconds.
+A successfully planned path should follow these simple rules to ensure the vehicle:
+- Will not exceed 50 MPH
+- Will not exceed a total acceleration of 10 m/s^2
+- Will not exceed a jerk of 10 m/s^3
+- Will not come into contact with any of the other cars on the road
+- Will not spend more than a 3 second length out side the lane lanes during changing lanes, and every other time the car stays inside one of the 3 lanes on the right hand side of the road.
+
+#### Rubric points
+- **The car drives according to the speed limit**
+  The vehicle's current speed is stored in a variable `ref_vel`, which is used while determining whether to speed up, slow down, or change lanes.
+
+- **Max acceleration and jerk are not exceeded.**
+  The vehicle starts and an initial velocity of 0, and gradually speeds up and slows down do avoid exceeding a total acceleration of 10 m/s^2 and a jerk of 10 m/s^3
+
+- **Car does not have collisions.**
+  Assuming other vehicles drive in an expected manor, the major collisions we must look out for are read-ending the car ahead in the same lane or colliding with a car in the next lane over while changing lanes. Both types of collisions are mitigated through the use of sensor fusion data. The model loops through all objects detected through sensor fusion, checking each detection to understand which lane it is in and where it will be by the time the vehicle reaches it. If the detected object is in the same lane, the model determines if there are other objects in the neighboring lanes, and makes a lane change if safe to do so. If it is unsafe, the vehicle will gradually slow down.
+
+- **The car stays in its lane, except for the time between changing lanes.**
+  The vehicle is able to keep its lane through understanding the width of each lane, generating future waypoints, and interpolating additional points
+  between the future waypoints. The future waypoints are created using Frenet coordinates at set intervals (30m, 60m 90m). Using Frenet coordinates in this
+  case makes it much easier to work with than euclidean coordinates. Using a spline, we are able to interpolate the remaining points needed to create a
+  smooth trajectory for our vehicle.
+
+
+- **The car is able to change lanes**
+  If the vehicle nears a detected object in the same lane, the model will determine if the neighboring lanes are clear to merge into. If the lane is clear,
+  we set our `lane` variable equal to the value of the lane the vehicle should merge into. The `lane` variable is then used while creating our future way points,
+  allowing us to again use the spline to create a smooth trajectory for a lane change.
 
 
 ### Simulator.
