@@ -68,7 +68,7 @@ Safely navigate a self-driving car around a virtual highway with other traffic t
 
 ![path_planning](https://user-images.githubusercontent.com/11286381/56447254-0e9c2a80-62bc-11e9-8175-d109df365521.gif)
 
-[Video](https://youtu.be/pV1saRkMq9o)
+[Video](https://youtu.be/pV1saRkMq9o)  
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p7-path-planning)
 
 ### PID controller
@@ -77,5 +77,5 @@ Use a Proportional-Integral-Derivative Controller (PID), to control the steering
 
 ![ezgif com-optimize](https://user-images.githubusercontent.com/11286381/56873418-160fb200-69e7-11e9-8bc2-1a71ebebbee3.gif)
 
-[Video](https://youtu.be/TC73FRDNECA)
+[Video](https://youtu.be/TC73FRDNECA)  
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p8-pid-controller)
