@@ -9,14 +9,34 @@ Self-Driving Car Engineer Nanodegree Program
 
 _Describe the effect each of the P, I, D components had in your implementation._
 
-**P*roportional
+**P*roportional:
+This component of the controller refers to the proportional control relative to the cross track error, or CTE.
+The CTE is the current y-position of our self-driving car along the x-axis, when our reference is a horizontal
+line. The formula to calculate steering here is `steering = -tau * crosstrack_error`. If we were to only
+use this component, our car would have a tendency to overshoot our reference point.
 
-**I**ntegral
+![Screen Shot 2019-05-01 at 7 11 06 AM](https://user-images.githubusercontent.com/11286381/57021197-6867f300-6be0-11e9-877d-ae7a285d276e.png)
 
 **D**erivative
+The derivative component includes calculating the delta between the current CTE and to the previous CTE value.
+Including this delta allows the self-driving car to update the steering angle is such a way that it is able
+to avoid overshooting and converge with the reference. The formula is `-tau_p * cte - tau_d * diff_cte`
+
+![Screen Shot 2019-05-01 at 7 16 51 AM](https://user-images.githubusercontent.com/11286381/57021453-1e334180-6be1-11e9-9bd4-488b858d7850.png)
+
+
+**I**ntegral:
+The integral component of the PID controller is responsible for keeping track of all the previous
+cross trace errors. While the full PID implementation performs slightly worse than the PD controller,
+the integral component allows us to adjust the steering angle relative to an biases. The formula
+for calculating the steering angle for the full PID controller is
+`-tau_p * cte - tau_d * diff_cte - tau_i * int_cte`.
+
+![Screen Shot 2019-05-01 at 7 13 45 AM](https://user-images.githubusercontent.com/11286381/57021375-d8767900-6be0-11e9-8746-3421e0563868.png)
 
 ### Tuning
-I manually tuned the initial values for the PID controller. Given more time, I would explore the TWIDDLE algorithm more.
+I manually tuned the initial values for the PID controller. Given more time, I would explore the TWIDDLE algorithm
+to determine the appropriate parameters.
 
 ## Dependencies
 
