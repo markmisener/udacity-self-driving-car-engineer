@@ -1,4 +1,7 @@
 import rospy
+from yaw_controller import YawController
+from pid import PID
+from lowpass import LowPassFilter
 
 GAS_DENSITY = 2.858
 ONE_MPH = 0.44704
@@ -39,7 +42,7 @@ class Controller(object):
         sample_time = current_time - self.last_time
         self.last_time = current_time
 
-        throttle = self.throttle_controller.step(vel_error, samplt_time)
+        throttle = self.throttle_controller.step(vel_error, sample_time)
         brake = 0
 
         if linear_vel == 0. and current_vel < 0.1:
