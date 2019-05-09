@@ -30,7 +30,7 @@ class Controller(object):
     def control(self, current_vel, dbw_enabled, linear_vel, angular_vel):
         if not dbw_enabled:
             self.throttle_controller.reset()
-            return 1., 0., 0.
+            return 0., 0., 0.
 
         current_vel = self.vel_lpf.filt(current_vel)
         steering = self.yaw_controller.get_steering(linear_vel, angular_vel,
@@ -48,6 +48,7 @@ class Controller(object):
         if linear_vel == 0. and current_vel < 0.1:
             throttle = 0
             brake = 700
+
         elif throttle < .1 and vel_error < 0:
             throttle = 0
             decel = max(vel_error, self.decel_limit)
