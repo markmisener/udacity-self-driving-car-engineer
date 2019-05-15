@@ -1,4 +1,4 @@
-rospy.loginfo(#!/usr/bin/env python
+#!/usr/bin/env python
 
 import rospy
 from std_msgs.msg import Bool
