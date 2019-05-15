@@ -72,28 +72,32 @@ class WaypointUpdater(object):
         val = np.dot(cl_vect-prev_vect, pos_vect-cl_vect)
 
         if val > 0:
+            rospy.loginfo('val > 0; closest_idx: {}'.format(closest_idx))
             closest_idx = (closest_idx + 1) % len(self.waypoints_2d)
         return closest_idx
 
     def publish_waypoints(self):
+        rospy.loginfo('publishing waypoints')
         final_lane = self.generate_lane()
         self.final_waypoints_pub.publish(final_lane)
 
     def generate_lane(self):
+        rospy.loginfo('generating lane')
         lane = Lane()
 
         closest_idx = self.get_closest_waypoint_idx()
         farthest_idx = closest_idx + LOOKAHEAD_WPS
         base_waypoints = self.base_lane.waypoints[closest_idx:farthest_idx]
 
-        if self.stopline_wp_idx == -1 or (self.stopline_wp_idx >= farthest_idx):
+        if (self.stopline_wp_idx == -1) or (self.stopline_wp_idx >= farthest_idx):
             lane.waypoints = base_waypoints
         else:
             lane.waypoints = self.decelerate_waypoints(base_waypoints, closest_idx)
-
+        rospy.loginfo('lane.waypoints: {}'.format(lane.waypoints))
         return lane
 
     def decelerate_waypoints(self, waypoints, closest_idx):
+        rospy.loginfo('decelerate_waypoints')
         temp = []
         for i, wp in enumerate(waypoints):
 
@@ -112,15 +116,21 @@ class WaypointUpdater(object):
         return temp
 
     def pose_cb(self, msg):
+        rospy.loginfo('pose_cb')
+        rospy.loginfo('msg: {}'.format(msg))
         self.pose = msg
 
     def waypoints_cb(self, waypoints):
+        rospy.loginfo('waypoints_cb')
+        rospy.loginfo('msg: {}'.format(waypoints))
         self.base_lane = waypoints
         if not self.waypoints_2d:
             self.waypoints_2d = [[waypoint.pose.pose.position.x, waypoint.pose.pose.position.y] for waypoint in waypoints.waypoints]
             self.waypoint_tree = KDTree(self.waypoints_2d)
 
     def traffic_cb(self, msg):
+        rospy.loginfo('traffic_cb')
+        rospy.loginfo('msg: {}'.format(msg))
         # callback for /traffic_waypoint message
         self.stopline_wp_idx = msg.data
 
@@ -129,12 +139,15 @@ class WaypointUpdater(object):
         pass
 
     def get_waypoint_velocity(self, waypoint):
+        rospy.loginfo('get_waypoint_velocity')
         return waypoint.twist.twist.linear.x
 
     def set_waypoint_velocity(self, waypoints, waypoint, velocity):
+        rospy.loginfo('set_waypoint_velocity')
         waypoints[waypoint].twist.twist.linear.x = velocity
 
     def distance(self, waypoints, wp1, wp2):
+        rospy.loginfo('distance')
         dist = 0
         dl = lambda a, b: math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2  + (a.z-b.z)**2)
         for i in range(wp1, wp2+1):
