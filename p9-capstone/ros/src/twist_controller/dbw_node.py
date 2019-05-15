@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+rospy.loginfo(#!/usr/bin/env python
 
 import rospy
 from std_msgs.msg import Bool
@@ -93,16 +93,20 @@ class DBWNode(object):
             rate.sleep()
 
     def dbw_enabled_cb(self, msg):
+        rospy.loginfo('dbw_node: dbw_enabled_cb %s', msg)
         self.dbw_enabled = msg
 
     def twist_cb(self, msg):
+        rospy.loginfo('dbw_node: twist_cb %s', msg)
         self.linear_vel = msg.twist.linear.x
         self.angular_vel = msg.twist.angular.z
 
     def velocity_cb(self, msg):
+        rospy.loginfo('dbw_node: velocity_cb %s', msg)
         self.current_vel = msg.twist.linear.x
 
     def publish(self, throttle, brake, steer):
+        rospy.loginfo('dbw_node: publish %6.1f, %6.1f, %6.1f', throttle, brake, steer)
         tcmd = ThrottleCmd()
         tcmd.enable = True
         tcmd.pedal_cmd_type = ThrottleCmd.CMD_PERCENT

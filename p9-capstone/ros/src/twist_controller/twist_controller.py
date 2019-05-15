@@ -29,6 +29,7 @@ class Controller(object):
 
     def control(self, current_vel, dbw_enabled, linear_vel, angular_vel):
         if not dbw_enabled:
+            rospy.loginfo('twist_controller: DBW not enabled')
             self.throttle_controller.reset()
             return 0., 0., 0.
 
@@ -46,10 +47,12 @@ class Controller(object):
         brake = 0
 
         if linear_vel == 0. and current_vel < 0.1:
+            rospy.loginfo('twist_controller: linear_vel == 0. and current_vel < 0.1')
             throttle = 0
             brake = 700
 
         elif throttle < .1 and vel_error < 0:
+            rospy.loginfo('twist_controller: throttle < .1 and vel_error < 0')
             throttle = 0
             decel = max(vel_error, self.decel_limit)
             brake = abs(decel)*self.vehicle_mass*self.wheel_radius
