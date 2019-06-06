@@ -12,7 +12,7 @@ defusedxml==0.5.0
 dnspython==1.16.0
 entrypoints==0.2.3
 eventlet==0.24.1
-Flask==1.0.2
+flask>=0.12.3
 Flask-SocketIO==3.1.2
 gast==0.2.0
 greenlet==0.4.15
