@@ -79,3 +79,10 @@ Use a Proportional-Integral-Derivative Controller (PID), to control the steering
 
 [Video](https://youtu.be/TC73FRDNECA)  
 [Source](https://github.com/markmisener/udacity-self-driving-car-engineer/tree/master/p8-pid-controller)
+
+### Capstone: Programming a real self-driving car
+
+Write ROS nodes to implement core functionality of the autonomous vehicle system, including traffic light detection, control, and waypoint following. The following is a system architecture diagram showing the ROS nodes and topics used in the project.
+
+
+![final-project-ros-graph-v2](https://user-images.githubusercontent.com/11286381/59644293-3d4e4a00-9121-11e9-9075-5c076213bb4c.png)
