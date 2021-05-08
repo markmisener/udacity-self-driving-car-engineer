@@ -11,7 +11,7 @@ decorator==4.3.0
 defusedxml==0.5.0
 dnspython==1.16.0
 entrypoints==0.2.3
-eventlet==0.24.1
+eventlet==0.31.0
 flask>=0.12.3
 Flask-SocketIO==3.1.2
 gast==0.2.0
